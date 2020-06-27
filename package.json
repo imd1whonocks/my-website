@@ -1,15 +1,20 @@
 {
-  "name": "online-resume",
+  "name": "my-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build && next export",
+    "start": "next start",
+    "docker-dev-build": "docker build -t my-website:dev -f Dockerfile.dev .",
+    "docker-dev": "docker run -it --rm --name my-website -v ${PWD}:/my-website -v /my-website/node_modules -e CHOKIDAR_USEPOLLING=true -p 3001:3000 my-website:dev",
+    "docker-build": "docker build -t my-website:prod .",
+    "docker-run": "docker run --name my-website-prod -p 80:80 my-website:prod"
   },
   "dependencies": {
     "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "sass": "^1.26.9"
   }
 }

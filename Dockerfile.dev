@@ -1,0 +1,8 @@
+FROM node:12.18.1-alpine3.11
+RUN mkdir -p /my-website
+WORKDIR /my-website
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+COPY . .
+CMD ["npm", "run", "dev"]
