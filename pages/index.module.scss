@@ -1,3 +1,70 @@
-.container {
-    // display: flex;
+$color: salmon;
+$heading-color: #6f6f6f;
+$border-color: #dadada;
+$text-color: #555;
+.root {
+    display: grid;
+    // min-height: 100vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "name contact"
+                        "experience  skills"
+                        "experience  projects"
+                        "education mb";
+    border-left: 10px solid $color;
+    padding: 1rem 1rem 1rem 1.5rem;
+}
+
+.name {
+    grid-area: name;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .fullname {
+        font-size: 3rem;
+        color: $color;
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+        // border-right: 1px solid $border-color;
+    }
+    .designation {
+        font-size: 2rem;
+        letter-spacing: 0.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $heading-color;
+        // border-right: 1px solid $border-color;
+    }
+}
+.contact {
+    grid-area: contact;
+    padding: 0.5rem 0 0.5rem 1rem;
+    color: $text-color;
+    border-bottom: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        &:last-of-type {
+            margin-bottom: 0rem;
+        }
+        .icon {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+            fill: $color;
+            path {
+                fill: $color;
+            }
+        }
+        .desc {
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
 }
