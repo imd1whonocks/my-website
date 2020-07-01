@@ -7,6 +7,7 @@ $text-color: #555;
     // min-height: 100vh;
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "name contact"
+                        "summary summary"
                         "experience  skills"
                         "experience  projects"
                         "education mb";
